@@ -3,11 +3,8 @@ package org.example.model;
 import lombok.*;
 
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
 public class Employee {
 private String nif;
 private String name;

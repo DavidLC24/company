@@ -1,17 +1,17 @@
 package org.example.readers;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
 import org.example.model.Company;
 import org.example.model.Department;
 
 import java.util.Scanner;
-@Data
 @AllArgsConstructor
+
 public class CompanyReader {
     private final Scanner sc;
     private final DepartmentReader departmentReader;
 
-/*public Company read(){
+public Company read(){
     System.out.println("//Introduce los datos de la empresa//");
     System.out.println("Nombre: ");
     String name= sc.nextLine();
@@ -23,8 +23,12 @@ public class CompanyReader {
     int numDepartments= sc.nextInt(); sc.nextLine();
 
     Department[] departments= new Department[numDepartments];
-    for (int i = 0; i < departments.length; i++) {
+    for (int i = 0; i < numDepartments; i++) {
+        departments[i]= departmentReader.read();
     }
-}*/
+    return new Company(
+            name, cif, departments
+    );
+}
 
 }
