@@ -3,24 +3,23 @@ package org.example.app;
 import lombok.AllArgsConstructor;
 import org.example.model.Company;
 import org.example.model.Department;
+import org.example.model.Employee;
 import org.example.readers.CompanyReader;
 
 import java.util.Scanner;
 @AllArgsConstructor
 public class CompanyApp {
     private final Scanner sc;
-    private CompanyReader companyReader;
+    private final CompanyReader companyReader;
 
     public void run(){
-        Company company= companyReader.read();
-
+        Company company=companyReader.read();
         int option;
-
         do {
             option = getOption();
 
             if(option==1){
-
+                showDepartmentOpt(company);
             } else if (option==2) {
 
             } else if (option==3) {
@@ -30,7 +29,7 @@ public class CompanyApp {
             } else {
                 System.out.println("Opción inválida");
             }
-        }while (option!=4);
+        }while(option!=4);
     }
 
     private int getOption() {
@@ -44,5 +43,18 @@ public class CompanyApp {
         option=sc.nextInt();
         sc.nextLine();
         return option;
+    }
+
+    private void showDepartmentOpt(Company company){
+        System.out.println("Nombre del departamento: ");
+        String name= sc.nextLine();
+
+        Department department= company.showDepartment(name);
+        if (department==null){
+            System.out.println("No se encuentra el departamento");
+        } else {
+            System.out.println("//Datos del departamento//");
+            System.out.println(department);
+        }
     }
 }
