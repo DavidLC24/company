@@ -1,8 +1,6 @@
 package org.example;
 
 import org.example.app.CompanyApp;
-import org.example.model.Department;
-import org.example.model.Employee;
 import org.example.readers.CompanyReader;
 import org.example.readers.DepartmentReader;
 import org.example.readers.EmployeeReader;

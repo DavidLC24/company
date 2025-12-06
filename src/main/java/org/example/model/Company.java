@@ -2,8 +2,6 @@ package org.example.model;
 
 import lombok.*;
 
-import java.util.Scanner;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
